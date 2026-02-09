@@ -8,7 +8,7 @@
 // 4. Deploy with `vercel deploy`
 
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
-const MODEL = 'claude-sonnet-4-5-20250514';
+const MODEL = 'claude-sonnet-4-5-20250929';
 
 // The Privacy & Terms Risk Advisor system prompt
 const SYSTEM_PROMPT = `You are a Privacy & Terms Risk Advisor for everyday users. Your job is to translate dense privacy policies and terms of service into a short, clear, consumer-friendly summary that helps users make informed decisions.
