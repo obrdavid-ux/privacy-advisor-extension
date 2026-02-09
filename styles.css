@@ -1,0 +1,381 @@
+/* ── Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1a1a2e;
+  background: #f8f9fb;
+}
+
+.container {
+  padding: 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 12px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.header-icon {
+  font-size: 20px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.current-site {
+  font-size: 12px;
+  color: #6b7280;
+  padding: 4px 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-row label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.control-row select {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  background: white;
+  color: #1a1a2e;
+  cursor: pointer;
+}
+
+.analyze-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.analyze-btn:hover {
+  background: #1d4ed8;
+}
+
+.analyze-btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+.spinner.large {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+  border-color: rgba(37,99,235,0.2);
+  border-top-color: #2563eb;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Loading State ── */
+.loading-state {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.loading-animation p {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.loading-sub {
+  font-weight: 400 !important;
+  font-size: 12px;
+  color: #9ca3af !important;
+}
+
+/* ── Error State ── */
+.error-state {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.error-icon {
+  font-size: 32px;
+}
+
+.error-message {
+  margin: 8px 0 12px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.retry-btn {
+  padding: 6px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background: #f3f4f6;
+}
+
+/* ── Verdict Banner ── */
+.verdict-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.verdict-banner.recommended {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.verdict-banner.caution {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.verdict-banner.avoid {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.verdict-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.verdict-decision {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.verdict-reason {
+  font-size: 12px;
+  color: #4b5563;
+  margin-top: 2px;
+}
+
+/* ── Risk Level ── */
+.risk-level {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 4px 0;
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 14px;
+}
+
+.section h2 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ── Factor Table ── */
+.factor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.factor-table td {
+  padding: 4px 0;
+  vertical-align: top;
+}
+
+.factor-table td:first-child {
+  font-weight: 600;
+  color: #4b5563;
+  width: 45%;
+}
+
+.factor-table td:last-child {
+  color: #1a1a2e;
+}
+
+.factor-table tr:last-child td {
+  font-weight: 700;
+}
+
+/* Rating color badges */
+.rating-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rating-badge.good { background: #dcfce7; color: #166534; }
+.rating-badge.moderate { background: #fef9c3; color: #854d0e; }
+.rating-badge.bad { background: #fee2e2; color: #991b1b; }
+
+/* ── Bullet Lists ── */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #374151;
+}
+
+.bullet-list li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: #9ca3af;
+  font-weight: bold;
+}
+
+/* ── Exit Table ── */
+.exit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.exit-table td {
+  padding: 4px 0;
+  vertical-align: top;
+}
+
+.exit-table td:first-child {
+  font-weight: 600;
+  color: #4b5563;
+  width: 25%;
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  font-size: 11px;
+  color: #9ca3af;
+  padding: 8px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  margin: 12px 0 8px;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.action-btn:hover {
+  background: #f3f4f6;
+}
+
+/* ── Cache Info ── */
+.cache-info {
+  text-align: center;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+/* ── Scrollbar ── */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
