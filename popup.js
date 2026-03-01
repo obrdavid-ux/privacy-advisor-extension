@@ -1,6 +1,6 @@
 // ─── Configuration ───
 // TODO: Replace with your deployed backend URL
-const API_BASE_URL = 'https://privacy-advisor-extension.vercel.app';
+const API_BASE_URL = 'https://privacy-advisor-api.obrdavid.workers.dev';
 const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 // ─── DOM References ───
